@@ -3,7 +3,7 @@ from modelos.agenda import Agenda
 
 class AgendaServicio:
     """
-    Clase de servicio que maneja la lógica de negocio de la agenda
+    Clase de servicio que maneja la lógica de negocio
     """
     def __init__(self):
         self.agenda = Agenda()
@@ -40,3 +40,25 @@ class AgendaServicio:
     def contar_contactos(self):
         """Retorna el número de contactos"""
         return self.agenda.get_contador()
+    
+    def registrar_interaccion(self, indice, tipo):
+        """
+        Registra una interacción en la matriz
+        tipo: 0=Llamada, 1=Mensaje, 2=Email
+        """
+        return self.agenda.actualizar_interaccion(indice, tipo)
+    
+    def obtener_estadisticas_matriz(self):
+        """Retorna los contactos con sus estadísticas de la matriz"""
+        contactos = self.agenda.get_contactos()
+        matriz = self.agenda.obtener_matriz()
+        
+        estadisticas = []
+        for i in range(len(contactos)):
+            estadisticas.append({
+                'nombre': contactos[i].get_nombre(),
+                'llamadas': matriz[i][0],
+                'mensajes': matriz[i][1],
+                'emails': matriz[i][2]
+            })
+        return estadisticas

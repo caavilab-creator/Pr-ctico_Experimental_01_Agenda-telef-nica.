@@ -1,6 +1,7 @@
 class Contacto:
     """
     Clase que representa un contacto de la agenda telefónica
+    Estructura: Registro/Clase
     """
     def __init__(self, nombre="", telefono="", email="", direccion=""):
         self.nombre = nombre
@@ -33,4 +34,5 @@ class Contacto:
         self.direccion = direccion
     
     def __str__(self):
-        return f"Nombre: {self.nombre}\nTeléfono: {self.telefono}\nEmail: {self.email}\nDirección: {self.direccion}\n"
+        return f"Nombre: {self.nombre}\nTeléfono: {self.telefono}\nEmail: {self.email}\nDirección: {self.direccion}"
+    

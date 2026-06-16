@@ -5,6 +5,7 @@ def main():
     """
     Programa Principal - Agenda Telefónica
     Estructura de Datos - Unidad 1
+    Universidad Estatal Amazónica (UEA)
     """
     print("="*40)
     print("   SISTEMA DE AGENDA TELEFÓNICA")
@@ -30,8 +31,10 @@ def main():
         elif opcion == "5":
             menu.eliminar_contacto()
         elif opcion == "6":
-            menu.ver_cantidad()
+            menu.registrar_interaccion()
         elif opcion == "7":
+            menu.ver_estadisticas_matriz()
+        elif opcion == "8":
             print("\n¡Gracias por usar la Agenda Telefónica!")
             print("Hasta luego...")
             break
